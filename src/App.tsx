@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { PeopleDataProviderUsage } from './components/provider-component';
+import { ToggleCompoundCompUsage } from './components/flexible-compound-component/';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        margin: 'auto',
+        width: '50%',
+        marginTop: '10%',
+        border: 'solid 1px',
+        padding: '10px'
+      }}
+    >  <h3> Flexible compound pattern implementation</h3>
+      <ToggleCompoundCompUsage />
+      
+      <h3> Provider pattern implementation</h3>
+      <PeopleDataProviderUsage />
     </div>
   );
 }
