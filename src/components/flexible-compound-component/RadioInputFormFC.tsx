@@ -24,14 +24,13 @@ interface ProviderState extends State {
   onChange(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
-// Create a RadioImageFormContext with React.createContext
+// Create a RadioInputContext with React.createContext
 const RadioInputFormContext = React.createContext<ProviderState>({
   currentValue: '',
   defaultValue: undefined,
   onChange: () => {},
 });
 
-RadioInputFormContext.displayName = 'RadioImageForm';
 
 const RadioInputForm = ({
   children,
