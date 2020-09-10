@@ -94,10 +94,8 @@ const SubmitButton = ({ onSubmit }: SubmitButtonProps): React.ReactElement => {
   return (
     <button
       type='button'
-      className='btn btn-primary'
       onClick={() => onSubmit?.(currentValue)}
       disabled={!currentValue}
-      aria-disabled={!currentValue}
     >
       Submit
     </button>
@@ -110,7 +108,7 @@ const CurrentValue = (): React.ReactElement => {
   return (
     <>
       {!!currentValue && (
-        <div className='alert current-value'>
+        <div>
           <h1>Current Value: {currentValue}</h1>
         </div>
       )}
