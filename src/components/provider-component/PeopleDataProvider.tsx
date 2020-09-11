@@ -28,7 +28,7 @@ const MOCK_DATA: IPerson[] = [
 const initState: State = { status: Status.loading, data: null, error: null };
 
 // Create a DogDataProviderContext with React.createContext
-const PersonDataProviderContext = React.createContext<State>({ data: null, status: Status.loading, error: null });
+const PersonDataProviderContext = React.createContext<State | null>(null);
 
 // The Custom Consumer Hook
 // The custom hook uses React.useContext to get the provided context value, and
@@ -40,10 +40,10 @@ const PersonDataProviderContext = React.createContext<State>({ data: null, statu
 export function usePeopleProviderState() {
   const context = React.useContext(PersonDataProviderContext);
 
-  // IMPORTANT to pass undefined to React.createContext() and DO NOT pass
-  // default values.
-  if (context === undefined) {
-    throw new Error('useDogProviderState must be used within DogDataProvider.');
+/*   pass null to React.createContext() and DO NOT pass
+  default values. */
+  if (!context) {
+    throw new Error('component must be wrapped within PersonDataProvider.');
   }
 
   return context;
@@ -73,9 +73,6 @@ const PeopleDataProvider: React.FC = ({ children }): JSX.Element => {
         // 	);
         // };
         const data = await asyncMockApiFn();
-        // Once our SPA loads the data will only be fetched once even
-        // when we navigate to another page.
-        console.log('1 CALL');
         setState({
           data,
           status: Status.loaded,
