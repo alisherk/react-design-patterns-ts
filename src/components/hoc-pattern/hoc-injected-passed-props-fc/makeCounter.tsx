@@ -13,11 +13,7 @@ interface MakeCounterProps {
   maxValue?: number;
 }
 
-export const makeCounter = <P extends InjectedCounterProps>(
-  Component: React.ComponentType<P>
-): React.FC<Subtract<P, InjectedCounterProps> & MakeCounterProps> => (
-  props
-) => {
+export const makeCounter = <P extends InjectedCounterProps>(Component: React.ComponentType<P>): React.FC<Subtract<P, InjectedCounterProps> & MakeCounterProps> => (props) => {
 
   const [value, setValue] = useState<number>(0);
 

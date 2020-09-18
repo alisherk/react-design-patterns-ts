@@ -1,6 +1,7 @@
 import React from 'react';
 import { PeopleDataProviderUsage } from './components/provider-pattern';
 import { ToggleCompoundCompUsage } from './components/flexible-compound-pattern';
+import { UsageOfAltHocPattern } from './components/render-props-pattern'
 import {
   InjectedPropsUsage,
   InjectedAndPassedPropsUsage,
@@ -18,7 +19,6 @@ function App() {
         padding: '10px',
       }}
     >
-      {' '}
       <h3> Flexible compound pattern implementation</h3>
       <ToggleCompoundCompUsage />
       <h3> Provider pattern implementation</h3>
@@ -29,6 +29,8 @@ function App() {
       <InjectedAndPassedPropsUsage />
       <h3> FC HOC example with injected props and passed in props </h3>
       <InjectedAndPassedPropsUsageFC />
+      <h3> Children as function example </h3>
+      <UsageOfAltHocPattern />
     </div>
   );
 }

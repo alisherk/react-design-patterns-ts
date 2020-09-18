@@ -79,7 +79,6 @@ const PeopleDataProvider: React.FC = ({ children }): JSX.Element => {
           error: null,
         });
       } catch (error) {
-        console.log(error.message);
         setState({
           error,
           status: Status.error,

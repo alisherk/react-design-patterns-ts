@@ -74,7 +74,6 @@ const RadioInput = ({
       value={value}
       onChange={onChange}
       checked={defaultValue === value || currentValue === value}
-      aria-checked={currentValue === value}
     />
     {value}
   </label>
