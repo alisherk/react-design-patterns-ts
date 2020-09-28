@@ -2,9 +2,18 @@
 
 ### `Repo Description`
 
-This repo shows the examples of popular React patterns written TS. Look at the 
+This repo shows the examples of popular React patterns written in TS. Look at the 
 components directory to find popular patterns by name. Each director attemps 
-to implement both class and functional component for each pattern. Currently Provider pattern is missing class implementation. Also in general, other popular patterns are missing such as HOC, function as children to name a few.  
+to implement both class and functional component for each pattern. 
+
+Patterns available: 
+Compound pattern 
+Context with reducer 
+Flexible compound component 
+HOC 
+Optimized context state 
+Provider pattern 
+Render props & render as children as function
 
 ### `Author`
 Alisher K

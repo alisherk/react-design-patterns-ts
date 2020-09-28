@@ -1,5 +1,5 @@
 import React from 'react';
-import { PeopleDataProviderUsage } from './components/provider-pattern';
+import { PeopleDataProviderUsage, BookDataProviderUsage } from './components/provider-pattern';
 import { ToggleCompoundCompUsage } from './components/flexible-compound-pattern';
 import { UsageOfAltHocPattern } from './components/render-props-pattern'
 import {
@@ -7,6 +7,7 @@ import {
   InjectedAndPassedPropsUsage,
   InjectedAndPassedPropsUsageFC
 } from './components/hoc-pattern';
+import { Usage } from './components/optimized-context/Usage';
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
       <InjectedAndPassedPropsUsageFC />
       <h3> Children as function example </h3>
       <UsageOfAltHocPattern />
+      <h3> Provider pattern with reducer </h3>
+      <BookDataProviderUsage />
+      <h3> Optimized context state</h3>
+      <Usage/>
     </div>
   );
 }

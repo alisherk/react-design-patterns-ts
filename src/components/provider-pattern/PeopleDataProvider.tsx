@@ -28,7 +28,7 @@ const MOCK_DATA: IPerson[] = [
 const initState: State = { status: Status.loading, data: null, error: null };
 
 // Create a DogDataProviderContext with React.createContext
-const PersonDataProviderContext = React.createContext<State | null>(null);
+const PersonDataProviderContext = React.createContext<State | undefined>(undefined);
 
 // The Custom Consumer Hook
 // The custom hook uses React.useContext to get the provided context value, and

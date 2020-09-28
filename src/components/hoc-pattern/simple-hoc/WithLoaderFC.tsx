@@ -4,9 +4,7 @@ interface WithLoadingProps {
   loading: boolean;
 }
 
-const withLoading = <P extends object>(
-  Component: React.ComponentType<P>
-): React.FC<P & WithLoadingProps> => ({
+export const withLoading = <P extends object>(Component: React.ComponentType<P>): React.FC<P & WithLoadingProps> => ({
   loading,
   ...props
 }: WithLoadingProps) =>
