@@ -6,7 +6,7 @@ interface IBook {
   description: string;
 }
 
-const data: IBook[] = [
+const books: IBook[] = [
   {
     id: 1,
     title: 'The wolf of Wall Street',
@@ -20,14 +20,16 @@ const data: IBook[] = [
 ];
 
 interface State {
-  data: IBook[] | null;
+  books: IBook[];
   error: null | Error;
   loading: boolean;
-}
+}; 
+
+type Action = { type: ActionTypes.ADD; book: IBook };
 
 const BookDataContext = createContext<{
   state: State;
-  dispatch: React.Dispatch<any>;
+  dispatch: React.Dispatch<Action>;
 } | null>(null);
 
 export function useBookDataContext() {
@@ -36,18 +38,17 @@ export function useBookDataContext() {
   return context;
 }
 
-enum ActionTypes {
+export enum ActionTypes {
   ADD = 'ADD',
 }
 
-type Action = { type: ActionTypes.ADD; book: IBook };
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
     case ActionTypes.ADD:
       return {
         ...state,
-        data: data.concat(action.book),
+        books: state.books.concat(action.book)
       };
 
     default:
@@ -55,10 +56,11 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const initialState: State = { data: data, error: null, loading: true };
+const initialState: State = { books, error: null, loading: true };
 
 export const BookDataProvider: React.FC = ({ children }): JSX.Element => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  
+    const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <BookDataContext.Provider value={{ state, dispatch }}>

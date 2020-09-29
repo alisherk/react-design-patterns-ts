@@ -2,14 +2,14 @@ import React, { memo } from 'react';
 import { useBookDataContext } from './BookDataProvider';
 
 export const Books = memo((): JSX.Element => {
-  const { state, dispatch } = useBookDataContext();
+  const { state } = useBookDataContext();
   return (
-    <>
-      {state.data?.map((book) => (
+    <div>
+      {state.books?.map((book) => (
         <p key={book.id}>
           {book.title} {book.description}{' '}
         </p>
       ))}
-    </>
+    </div>
   );
 });
