@@ -6,3 +6,4 @@ Please reference our GitHub Issues page
 Fork the repo and create your branch from the master branch
 Target the master branch for new pull requests
 Open a pull request from your forked master branch
+Add name of your pattern to the list in README.md
