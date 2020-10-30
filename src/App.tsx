@@ -8,6 +8,7 @@ import {
   InjectedAndPassedPropsUsageFC
 } from './components/hoc-pattern';
 import { Usage } from './components/optimized-context/Usage';
+import { HydraUsage } from './components/hydra-pattern/HydraUsage';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
       <BookDataProviderUsage />
       <h3> Optimized context state</h3>
       <Usage/>
+      <h3> Hydra Pattern</h3>
+      <HydraUsage />
     </div>
   );
 }
