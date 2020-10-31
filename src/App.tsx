@@ -1,14 +1,15 @@
 import React from 'react';
-import { PeopleDataProviderUsage, BookDataProviderUsage } from './components/provider-pattern';
-import { ToggleCompoundCompUsage } from './components/flexible-compound-pattern';
-import { UsageOfAltHocPattern } from './components/render-props-pattern'
+import { PeopleDataProviderUsage, BookDataProviderUsage } from './patterns/provider-pattern';
+import { ToggleCompoundCompUsage } from './patterns/flexible-compound-pattern';
+import { UsageOfAltHocPattern } from './patterns/render-props-pattern'
+import { Usage } from './patterns/optimized-context/Usage';
+import { HydraUsage } from './patterns/hydra-pattern/HydraUsage';
+import { StateReducerExample  } from './patterns/state-reducer-pattern/state-reducer';
 import {
-  InjectedPropsUsage,
-  InjectedAndPassedPropsUsage,
-  InjectedAndPassedPropsUsageFC
-} from './components/hoc-pattern';
-import { Usage } from './components/optimized-context/Usage';
-import { HydraUsage } from './components/hydra-pattern/HydraUsage';
+    InjectedPropsUsage,
+    InjectedAndPassedPropsUsage,
+    InjectedAndPassedPropsUsageFC
+  } from './patterns/hoc-pattern';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         padding: '10px',
       }}
     >
+      <h3> StateReducer Pattern</h3>
+      <StateReducerExample />
       <h3> Flexible compound pattern implementation</h3>
       <ToggleCompoundCompUsage />
       <h3> Provider pattern implementation</h3>
