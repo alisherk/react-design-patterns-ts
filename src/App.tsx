@@ -2,9 +2,10 @@ import React from 'react';
 import { PeopleDataProviderUsage, BookDataProviderUsage } from './patterns/provider-pattern';
 import { ToggleCompoundCompUsage } from './patterns/flexible-compound-pattern';
 import { UsageOfAltHocPattern } from './patterns/render-props-pattern'
-import { Usage } from './patterns/optimized-context/Usage';
+//import { Usage } from './patterns/optimized-context/Usage';
 import { HydraUsage } from './patterns/hydra-pattern/HydraUsage';
 import { StateReducerExample  } from './patterns/state-reducer-pattern/state-reducer';
+import { Usage } from './custom-hooks/pagination/Usage'; 
 import {
     InjectedPropsUsage,
     InjectedAndPassedPropsUsage,
@@ -38,10 +39,10 @@ function App() {
       <UsageOfAltHocPattern />
       <h3> Provider pattern with reducer </h3>
       <BookDataProviderUsage />
-      <h3> Optimized context state</h3>
-      <Usage/>
       <h3> Hydra Pattern</h3>
       <HydraUsage />
+      <h3> Pagination hook</h3>
+      <Usage />
     </div>
   );
 }
